@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Documentación proyecto ISP | Desarrollo
+	</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+<h1>Desarrollo proyecto ISP</h1><h3>Por: Juan-Pablo Andrés Barahona Aravena</h3>
+
+<p><a href="../">ISP</a> > <a href="#">Desarrollo</a></p>
+
+<h2>
+	Introducción.
+</h2>
+<p>
+	En esta sección se documenta todo el desarrollo del proyecto, desde la creación del core en C++ con las heurísticas y meta-heurísticas de solución presentes en las tesis y el desarrollo del aplicativo Web en PHP y la comunicación entre ambos lenguajes.
+</p>
+
+<h2>Contenido</h2>
+<ul>
+	<li><a href="#estructura-archivo">Estructura de Archivos</a></li>
+	<li><a href="#estructura-dato">Estructura de Datos</a></li>
+	<li><a href="#">Heurístticas</a></li>
+	<li><a href="#">Meta-Heurístticas</a></li>
+</ul>
+
+<h2 id="estructura-archivo">Estructura de Archivos</h2>
+<p>
+	La aplicación principal consta de diversos archivos de cabecera como List.h, Nodo.h (figura), ReadParameters.h, NFP.h, NFR.h y BL.h, los cuales son incluidos y distribuidos de manera homogénea para la eficiencia de memoria que es el principal objetivo en cumplir. Además, contempla una sucesión de archivos .cc que instancian los objetos de los archivos de cabezera y permiten a la contrucción del archivo main. Por último, se genera el archivo Makefile que permite la unión de los archivos divididos en carpetas y creación de los archivos objetos (no confundir los objetos de código), permitiendo el surgimiento del binario (programa). A continuación se presenta arquitectura de archivos.
+</p>
+
+<pre>
+	ISP/
+	 |	Makefile
+	 |	src/
+	 |	 |	Include/
+	 |	 |	 |	List.h
+	 |	 |	 |	Nodo.h
+	 |	 |	 |	ISP.h
+	 |	 |	 |	ReadParameters.h
+	 |	 |	 |	NFP.h
+	 |	 |	 |	NFR.h
+	 |	 |	 |	BL.h
+	 |	 |	Object/ (Almacenan todos los archivos objetos generados por el compilador)
+	 |	 |	*.cc (Diversos archivos C++)
+	 |	 |	Makefile
+	 |	ISP
+</pre>
+
+
+<p>
+	Los archivos de cabezera, contienen la importancia del conjunto principal de estructura de datos del sistema y que serán expuestos y explicados brevemente su intencion y funcionamiento en la aplicación.
+</p>
+
+<h2 id="estructura-dato">Estructura de datos</h2>
+
+</body>
+
+</html>
