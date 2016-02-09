@@ -16,14 +16,14 @@
 	</h2>
 
 	<p>
-		En esta fracción del desarrollo del proyecto, se presentan los componentes con el cual se utilizaron para evaluar el redimiento del programa e ir mejorando defectos graves en el transcurso de su desarrollo. Primordialmente se utilizaron las instancias de <a href="http://paginas.fe.up.pt/~esicup/files/datasets/albano_2007-05-15.zip">Albano</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/marques_2007-05-15.zip">Marques</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/jakobs_2007-04-23.zip">Jakobs</a>, entre otras instancias que son encontradas en el sitio de la asociación <a href="http://paginas.fe.up.pt/~esicup/datasets?page=2" target="_blank">EURO</a> que son un grupo especialisado en el área de cortes y empaque de figuras, permitiendo así, evaluar de manera correcta el desempeño (<i>Benchmark</i>) del aplicativo. Además, se utilizaron accesorios de Intel que demuestra en alto nivel las fuentes y caracterisiticas que el programa emite en el transcurso de su ejecución, realizando <i>debugg</i> y analizando la memoria utilizada demostrando si existe fuga de ella.
+		En esta fracción del desarrollo del proyecto, se presentan los componentes con el cual se utilizaron para evaluar el redimiento del programa e ir mejorando defectos graves en el transcurso de su desarrollo. Primordialmente se utilizaron las instancias de <a href="http://paginas.fe.up.pt/~esicup/files/datasets/albano_2007-05-15.zip">Albano</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/marques_2007-05-15.zip">Marques</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/jakobs_2007-04-23.zip">Jakobs</a>, entre otras instancias que son encontradas en el sitio de la asociación <a href="http://paginas.fe.up.pt/~esicup/datasets?category_id=2" target="_blank">EURO</a> siendo un grupo especializado en el área de cortes y empaque de figuras, permitiendo así, evaluar de manera correcta el desempeño (<i>Benchmark</i>) del aplicativo. Además, se utilizaron accesorios de Intel que demuestra en alto nivel las fuentes y caracterisiticas que el programa emite en el transcurso de su ejecución, realizando <i>debugg</i> y analizando la memoria utilizada demostrando si existe fuga de ella.
 	</p>
 
 	<h2>Contenido</h2>
 	<ul>
 		<li><a href="#Intel">Intel</a></li>
 		<li><a href="#TinyXML2">TinyXML2</a></li>
-		<li><a href="#Instancias_y_tesis">Instancias y tesis</a></li>
+		<li><a href="#TesisInstancias">Tesis e Instancias</a></li>
 	</ul>
 
 	<h2 id="Intel">Intel®</h2>
@@ -41,7 +41,24 @@
 		Fuente: <a href="http://www.grinninglizard.com/tinyxml2/index.html">http://www.grinninglizard.com/tinyxml2/index.html</a>
 	</p>
 
-	<h2 id="Instancias_y_tesis">Instancias y tesis</h2>
+	<h2 id="TesisInstancias">Tesis e Instancias</h2>
+
+	<p>
+		<i>Irregular Strip Packing Problem</i> es unos de los problemas cientificos que más repercuciones a tenido durante las últimas decadas y diversos investigadores ya han llegado a una posible solución con la construcción de Heurísticas y Meta-heurísticas.
+	</p>
+	<p>
+		Antes que todo, es lograr idententificar que área del problema <i>Cutting and Packing</i> se desea desarrollar dado que existe una variedad de sub-problemas en él. ISP forma parte de los problemas <i>Open Dimension</i>, que significa que el contenedor en donde se posicionarán las figuras, posee un largo que es definido y fijo con anterioridad, sin embargo, el ancho es indefinido, dando la libertad de ajustarse eficientemente según las piezas insertadas en él. Mientras tanto, el siguiente documento, el cual me basé, explaya los tipos de corte y empaque existentes en las literaturas, logrando entender profundamente los diversos sub-problemas identificados en él. Documento: <a href="http://teaching.csse.uwa.edu.au/units/CITS7212/Project/12/papers/Wascher%20et%20al%2007.pdf" target="_blank">Washer et al 2007</a>.
+	</p>
+
+	<h3>No-fit polygon (NFP)</h3>
+	<p>
+		Es una de las tecnicas geométricas comúnmente usadas y encontrada en las literaturas de <a href="">Adamowicz & Albano (1976)</a>; <a href="">Albano & Sapupo (1980)</a>, <a href="">Bennell et al. (2000)</a>; <a href="">Gomes & Oliveira (2002)</a>; <a href="">Gomes & Oliveira (2006)</a>; <a href="">Imamichi et al. (2007)</a>; <a href="">Oliveira et al. (2000)</a>; <a href="https://www.researchgate.net/profile/Toshihide_Ibaraki/publication/227623613_Solving_the_irregular_strip_packing_problem_via_guided_local_search_for_overlap_minimization/links/0046351847d7f9047c000000.pdf" target="_blank">Umetani et al. (2008)</a>. Es usada para realizar pruebas de intersección, permitiendo la configuración de espacio entre dos figuras con las siguientes propiedades:
+		<ul>
+			<li>Sobrepuesto <i>(Overlap)</i>: Si la pieza A está sobre la pieza B.</li>
+			<li>Tacto <i>(Touch)</i>: Si la pieza A toca el borde de la pieza B.</li>
+			<li>Separación <i>(Separated)</i>: Si entre la pieza A y B existe un espacio.</li>
+		</ul>
+	</p>
 
 </body>
 </html>
