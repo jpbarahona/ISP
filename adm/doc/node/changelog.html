@@ -7,6 +7,69 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		
+		<h1>Irregular Strip Packing Problem (ISP)</h1><h3>Por: Juan-Pablo Andrés Barahona Aravena</h3>
+
+		<p>
+			<a href="../../../../">ISP</a> > <a href="../../../">Administración</a> > <a href="index.html">Nodos</a> > <a href="">ChangeLog</a>
+		</p>
+
+		<div id="20-02-2016">
+			<p>
+				<b>20/02/2016</b>
+			</p>
+			<ol>
+				<li>
+					Archivo: <b>Nodo_class.h</b> <br><br>
+					<u>Variable Miembro</u>: <br>
+					Se cambia el tipo de dato std:string a const char* de Id. <b>Motivo: efectuar compatibilidad con tipo dato retorno de la función tinyxml2::XMLElement.FirstAttribute() efectuado en archivo ReadParameters_Class.cc método ReadParametersCLI(const char *).</b><br><br>
+					<u>Función Miembro</u>: <br>
+					<b>Nodo ()</b>: Se cambia el parametro "std::string nId" a "const char* nId". <br>
+					<b>setId ()</b>: Se cambia el parametro "std::string nId" a "const char* nId". <br>
+					<b>getId ()</b>: Se cambia tipo dato retorno "std::string" a "const char* ". <br><br>
+					Archivo: <b>Nodo_class.cc</b> <br><br>
+					<u>Función Miembro</u>: <br>
+					<b>Nodo ()</b>: Se cambia el parametro "std::string nId" a "const char* nId". <br>
+					<b>setId ()</b>: Se cambia el parametro "std::string nId" a "const char* nId". <br><br>
+					<b>NOTA</b>: Cambio afecta a <a href="../list/changelog.html">Lista</a>
+				</li>
+			</ol>
+		</div>
+
+		<div id="21-02-2016">
+			<p>
+				<b>21/02/2016</b>
+			</p>
+			<ol>
+				<li>
+					Archivo: <b>Nodo_class.h</b> <br><br>
+					<u>Variables miembro</u>: <br>
+
+					Se modifica y agregan las siguientes variables X0, X1 , Y0 y Y1.<br><br>
+					<u>Función Miembro</u>: <br>
+					<b>Nodo ()</b>: Se inserta nuevos parametros "std::vector&#60;double&#62;& nX0, std::vector&#60;double&#62;& nX1, std::vector&#60;double&#62;& nY0, std::vector&#60;double&#62;& nY1", a cambio de "std::vector&#60;double&#62;& nX y std::vector&#60;double&#62;& nY".<br><br>
+					<u>Añaden</u>:<br>
+					void setX0,<br>
+					void setX1,<br>
+					void setY0,<br>
+					void setY1,<br>
+					std::vector&#60;double&#62;& getX0,<br>
+					std::vector&#60;double&#62;& getX1,<br>
+					std::vector&#60;double&#62;& getY0,<br>
+					std::vector&#60;double&#62;& getY1.<br><br>
+
+					Archivo: <b>Nodo_class.cc</b> <br><br>
+					
+					<u>Función Miembro</u>: <br>
+					<b>Nodo ()</b>: Se inserta nuevos parametros "std::vector&#60;double&#62;& nX0, std::vector&#60;double&#62;& nX1, std::vector&#60;double&#62;& nY0, std::vector&#60;double&#62;& nY1", a cambio de "std::vector&#60;double&#62;& nX y std::vector&#60;double&#62;& nY".<br><br>
+					<u>Añaden</u>:<br>
+					void Nodo::setX0,<br>
+					void Nodo::setX1,<br>
+					void Nodo::setY0,<br>
+					void Nodo::setY0 <br><br>
+					<b>NOTA</b>: Cambio afecta a <a href="../list/changelog.html">Lista</a>
+				</li>
+			</ol>
+		</div>
+
 	</body>
 </html>

@@ -9,7 +9,7 @@
 	<body>
 		<h1>Irregular Strip Packing Problem (ISP)</h1><h3>Por: Juan-Pablo Andrés Barahona Aravena</h3>
 		<p>
-			<a href="../../">ISP</a> > <a href="../">Administración</a> > <a href="">Observaciones</a>
+			<a href="../../../../">ISP</a> > <a href="../../../">Administración</a> > <a href="index.html">Lectura de archivos XML</a> > <a href="">Observaciones</a>
 		</p>
 
 		<h2>
@@ -39,6 +39,19 @@
 				<li>
 					1.1. La idea de realizar un explorador de archivos de instancias disponibles para el usuario, es simplemente para saber que archivos son capaces de cargar y estar listos para ser cargados en el software. <br>
 					Se implementa la biblioteca disponible en <i><a href="http://www.boost.org/doc/libs/1_36_0/libs/filesystem/doc/index.htm" target="_blank">boost FileSystem</a></i>, siendo un código capaz de leer y buscar archivos entre directorios indicando el cámino necesario para llegar a él y poder tener acceso desde el software. El código que permite indicar que archivos se encuentran cargados en los directorios es el <a href="http://www.boost.org/doc/libs/1_36_0/libs/filesystem/example/simple_ls.cpp">siguiente</a>.
+				</li>
+			</ul>
+		</div>
+
+		<div id="21-02-2016">
+			<p>
+				<b>21/02/2015</b>
+			</p>
+			<ul style="list-style-type:none">
+				<li>
+					Para leer los archivos XML, se utilizó la libreria <a href="http://www.grinninglizard.com/tinyxml2/index.html">tinyxml2</a> que permite facilmente parsear datos que provienen de cualquier archivo XML y ser procesados solo en C++. Dadas a las instancias rescatadas en <a href="http://paginas.fe.up.pt/~esicup/datasets?category_id=2" target="_blank">EURO</a>, todas contienen una estructura estandar con el objetivo de reducir lineas de código en las lecturas de dichos archivos y así facilmente lograr encapsular los polígonos de las distintas problematicas presentadas por los diferentes autores. <br><br>
+
+					La estructura de lectura es encontrada en <b>ReadParameters.cc</b> cuyo archivo de cabezera es <b>ReadParameters.h</b>.
 				</li>
 			</ul>
 		</div>
