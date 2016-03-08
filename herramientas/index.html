@@ -16,64 +16,198 @@
 	</h2>
 
 	<p>
-		En esta fracción del desarrollo del proyecto, se presentan los componentes con el cual se utilizaron para evaluar el redimiento del programa e ir mejorando defectos graves en el transcurso de su desarrollo. Primordialmente se utilizaron las instancias de <a href="http://paginas.fe.up.pt/~esicup/files/datasets/albano_2007-05-15.zip">Albano</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/marques_2007-05-15.zip">Marques</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/jakobs_2007-04-23.zip">Jakobs</a>, entre otras instancias que son encontradas en el sitio de la asociación <a href="http://paginas.fe.up.pt/~esicup/datasets?category_id=2" target="_blank">EURO</a> siendo un grupo especializado en el área de cortes y empaque de figuras, permitiendo así, evaluar de manera correcta el desempeño (<i>Benchmark</i>) del aplicativo. Además, se utilizaron accesorios de Intel que demuestra en alto nivel las fuentes y caracterisiticas que el programa emite en el transcurso de su ejecución, realizando <i>debugg</i> y analizando la memoria utilizada demostrando si existe fuga de ella.
+		En esta fracción del desarrollo del proyecto, se presentan los componentes con el cual se utilizaron para evaluar el redimiento del programa e ir mejorando defectos graves en el transcurso de su desarrollo. Primordialmente se utilizaron las instancias de <a href="http://paginas.fe.up.pt/~esicup/files/datasets/albano_2007-05-15.zip">Albano</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/marques_2007-05-15.zip">Marques</a>, <a href="http://paginas.fe.up.pt/~esicup/files/datasets/jakobs_2007-04-23.zip">Jakobs</a>, entre otras instancias que son encontradas en el sitio de la asociación <a href="http://paginas.fe.up.pt/~esicup/datasets?category_id=2" target="_blank">EURO</a> siendo un grupo especializado en el área de cortes y empaque de figuras, permitiendo así, evaluar de manera correcta el desempeño (<i>Benchmark</i>) del aplicativo. Además, se utilizaron accesorios de Intel que demuestra en alto nivel las fuentes y caracterisiticas que el programa emite en el transcurso de su ejecución, realizando <i>debugg</i> y analizando la memoria utilizada enseñando si existe fuga de ella.
 	</p>
 
 	<h2>Contenido</h2>
 	<ul>
-		<li><a href="#Versiones">Versiones</a></li>
-		<li><a href="#Documentacion">Documentación</a></li>
 		<li><a href="#Intel">Intel</a></li>
 		<li><a href="#TinyXML2">Parse XML</a></li>
+		<li><a href="#Versiones">Versiones</a></li>
+		<li><a href="#Documentacion">Documentación</a></li>
+		<li><a href="#RasterTek">RasterTek</a></li>
+		<li><a href="#Library">Librerias</a></li>
 		<li><a href="#TesisInstancias">Tesis e Instancias</a></li>
 	</ul>
 
-	<h2 id="Intel">Intel®</h2>
+	<div id="Intel">
+		<h2>Intel®</h2>
 
-	<p>
-		Durante el desarrollo se implementaros software's que Intel proporciona a estudiantes para entregar la ayuda y facilidad de mejorar el rendimiento del programa que principalmente se abarca en la eficiencia del uso de memoria en el código <i>core</i> realizado en C++ y que posee gran porcentaje en este proyecto. Intel presta ayuda a personas interesadas en el área de la computación <a href="https://software.intel.com/en-us/qualify-for-free-software" target="_blank">https://software.intel.com/en-us/qualify-for-free-software</a> que comienzan a realizar su proyecto en diversos lenguajes de bajo nivel. Dado que el programa utilizado en el desarrollo del proyecto es diseñado en C++, se implementa el <a href="https://software.intel.com/en-us/intel-inspector-xe" target="_blank">inspector</a> de errores, dando la facilidad de detectar y solucionar los defectos en el menor tiempo posible. Mientras tanto, se emplea otra aplicación que Intel otorga para analizar la optimización de memoria (<a href="https://software.intel.com/en-us/intel-vtune-amplifier-xe" target="_blank">Intel® VTune Amplifier</a>) permitiendo una descripción en alto nivel los recursos utilizados dentro de la CPU y GPU, gracias al entendimiento común de modelos implementados en las ejecuciones binarias (programas) e informando de forma clara, siendo capaz de interpretar sin ningún defecto y ser entendible por cualquier individuo con conocimientos básicos de la computación.
-	</p>
+		<p>
+			Durante el desarrollo se implementaros software's que Intel proporciona a estudiantes para entregar la ayuda y facilidad de mejorar el rendimiento del programa que principalmente se abarca en la eficiencia del uso de memoria en el código <i>core</i> realizado en C++ y que posee gran porcentaje en este proyecto. Intel presta ayuda a personas interesadas en el área de la computación <a href="https://software.intel.com/en-us/qualify-for-free-software" target="_blank">https://software.intel.com/en-us/qualify-for-free-software</a> que comienzan a realizar su proyecto en diversos lenguajes de bajo nivel. Dado que el programa utilizado en el desarrollo del proyecto es diseñado en C++, se implementa el <a href="https://software.intel.com/en-us/intel-inspector-xe" target="_blank">inspector</a> de errores, dando la facilidad de detectar y solucionar los defectos en el menor tiempo posible. Mientras tanto, se emplea otra aplicación que Intel otorga para analizar la optimización de memoria (<a href="https://software.intel.com/en-us/intel-vtune-amplifier-xe" target="_blank">Intel® VTune Amplifier</a>) permitiendo una descripción en alto nivel los recursos utilizados dentro de la CPU y GPU, gracias al entendimiento común de modelos implementados en las ejecuciones binarias (programas) e informando de forma clara, siendo capaz de interpretar sin ningún defecto y ser entendible por cualquier individuo con conocimientos básicos de la computación.
+		</p>
+	</div>
+	<div id="TinyXML2">
+		<h2>Parse XML</h2>
 
-	<h2 id="TinyXML2">Parse XML</h2>
+		<p>
+			TynyXML2 permite parsear XML en C++, logrando ser fácil de integrar y que además es deseado dado que utiliza memoria de manera eficiente, siendo capaz de ser aplicable en móviles.
+		</p>
+		<p>
+			Fuente: <a target="_blank" href="http://www.grinninglizard.com/tinyxml2/index.html">http://www.grinninglizard.com/tinyxml2/index.html</a>
+		</p>
+		<p>
+			Documentación: <a target="_blank" href="http://www.grinninglizard.com/tinyxml2docs/index.html">http://www.grinninglizard.com/tinyxml2docs/index.html</a>
+		</p>
+	</div>
 
-	<p>
-		TynyXML2 permite parsear XML en C++, logrando ser fácil de integrar y que además es deseado dado que utiliza memoria de manera eficiente, siendo capaz de ser aplicable en móviles.
-	</p>
-	<p>
-		Fuente: <a target="_blank" href="http://www.grinninglizard.com/tinyxml2/index.html">http://www.grinninglizard.com/tinyxml2/index.html</a>
-	</p>
-	<p>
-		Documentación: <a target="_blank" href="http://www.grinninglizard.com/tinyxml2docs/index.html">http://www.grinninglizard.com/tinyxml2docs/index.html</a>
-	</p>
+	<div id="Versiones">
+		<h2>Versiones</h2>
+		<p>
+			Las versiones de este proyecto se basan con la temática de <i><a href="http://semver.org/" target="_blank">Semantic Versioning</a></i>.
+		</p>
+	</div>
 
-	<h2 id="Versiones">Versiones</h2>
-	<p>
-		Las versiones de este proyecto se basan en (aún no...)	<a href="http://semver.org/" target="_blank">Semantic Versioning</a>.
-	</p>
+	<div id="Documentacion">
+		<h2>Documentación</h2>
+		<p>
+			La documentación es construida con <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>.
+		</p>
+	</div>
 
-	<h2 id="Documentacion">Documentación</h2>
-	<p>
-		La documentación es construida (aún no...) con <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>.
-	</p>
+	<div id="RasterTek">
+		<h2>Raster Tek</h2>
+		<p>
+			<a href="http://www.rastertek.com/">Raster Tek</a> es un sitio web en donde se exponen tutoriales para la programación gráfica usando DirectX 10, DirectX 11, DirectX 12. Este tutorial está escrito en C++ con HLSL y shader version 4.0, 5.0 y 5.1 (shader es el concepto del sombrío). Es posible la utilización de estas API a futuro cuando se comienze a trabajar con figuras 3D, pero a esta altura, como en este proyecto se trabaja con figuras 2D, se empleará una forma más simple para desplegar el diseño que presente el software.
+	 	</p>
+	 	<p>
+	 		Sitio: <a href="http://www.rastertek.com/" target="_blank">RasterTek</a>.
+	 	</p>
+	 	<p>
+	 		Rendering 2D: <a href="http://www.rastertek.com/dx11tut11.html" target="_blank">dx11tut11</a>.
+	 	</p>
+	</div>
 
-	<h2 id="TesisInstancias">Tesis e Instancias</h2>
+	<div id="Library">
+		<h2>Librerias</h2>
+		<p>
+			<p>
+				Las librerías mostradas a continuación, son implentadas formando parte importante en el desarrollo del software, permitiendo el uso eficiente de la memoria y acelerando los tiempos de ejecución al utilizar la CPUs o multi-CPUs y GPUs del equipo (<a href="http://viennacl.sourceforge.net/viennacl-examples.html" target="_blank">ViennaCL</a>), agregando además, el paradigma de programación paralela para el trabajo con matrices (<a href="http://eigen.tuxfamily.org/index.php?title=Main_Page" target="_blank">Eigen</a>). 
+			</p>
+			<p>
+				Se incluye la librería <a href="https://www.sgi.com/tech/stl/" target="_blank">STL</a> para la utilización de diversas estructuras de datos.
+			</p>
 
-	<p>
-		<i>Irregular Strip Packing Problem</i> es unos de los problemas cientificos que más repercuciones a tenido durante las últimas decadas y diversos investigadores ya han llegado a una posible solución con la construcción de Heurísticas y Meta-heurísticas.
-	</p>
-	<p>
-		Antes que todo, es lograr idententificar que área del problema <i>Cutting and Packing</i> se desea desarrollar dado que existe una variedad de sub-problemas en él. ISP forma parte de los problemas <i>Open Dimension</i>, que significa que el contenedor en donde se posicionarán las figuras, posee un largo que es definido y fijo con anterioridad, sin embargo, el ancho es indefinido, dando la libertad de ajustarse eficientemente según las piezas insertadas en él. Mientras tanto, el siguiente documento, el cual me basé, explaya los tipos de corte y empaque existentes en las literaturas, logrando entender profundamente los diversos sub-problemas identificados en él. Documento: <a href="http://teaching.csse.uwa.edu.au/units/CITS7212/Project/12/papers/Wascher%20et%20al%2007.pdf" target="_blank">Washer et al 2007</a>.
-	</p>
+			<hr>
+			<p>
+				Una <a href="http://www.eriksmistad.no/getting-started-with-opencl-and-gpu-computing/" target="_blank">guía</a> muy importante acerca de OpenCL y que entrega información relevante sobre su funcionamiento y sus pre requisitos para correr en linux (ubuntu 15.04).
+			</p>
+			<p>
+				<a href="http://amd-dev.wpengine.netdna-cdn.com/wordpress/media/2013/12/AMD_OpenCL_Programming_User_Guide2.pdf" target="_blank">Guía del usuario, programación AMD OpenCL</a>.
+			</p>
+			<hr>
 
-	<h3>No-fit polygon (NFP)</h3>
-	<p>
-		Es una de las tecnicas geométricas comúnmente usadas y encontrada en las literaturas de <a href="">Adamowicz & Albano (1976)</a>; <a href="">Albano & Sapupo (1980)</a>, <a href="">Bennell et al. (2000)</a>; <a href="">Gomes & Oliveira (2002)</a>; <a href="">Gomes & Oliveira (2006)</a>; <a href="">Imamichi et al. (2007)</a>; <a href="">Oliveira et al. (2000)</a>; <a href="https://www.researchgate.net/profile/Toshihide_Ibaraki/publication/227623613_Solving_the_irregular_strip_packing_problem_via_guided_local_search_for_overlap_minimization/links/0046351847d7f9047c000000.pdf" target="_blank">Umetani et al. (2008)</a>. Es usada para realizar pruebas de intersección, permitiendo la configuración de espacio entre dos figuras con las siguientes propiedades:
-		<ul>
-			<li>Sobrepuesto <i>(Overlap)</i>: Si la pieza A está sobre la pieza B.</li>
-			<li>Tacto <i>(Touch)</i>: Si la pieza A toca el borde de la pieza B.</li>
-			<li>Separación <i>(Separated)</i>: Si entre la pieza A y B existe un espacio.</li>
-		</ul>
-	</p>
+			<ul>
+				<li>
+					<h3>ViennaCL</h3>
+					<p>
+						ViennaCL - Es una libreria de código abierto de operaciones en algebra lineal que permite la computación en difirentes arquitecturas (GPUs, MIC) y la utilización de multiples núcleos CPUs acelerando el tiempo de ejecución. Está escrita en lenguaje de C++ e incluye CUDA, <a href="https://www.khronos.org/opencl/" target="_blank">OpenCL</a> y OpenMP.
+					</p>
+					<p>
+						Para identificar errores en la compilación o ejecución del sistema, se utiliza el siguiente <i><a href="http://www.gremedy.com/gDEBuggerCL.php" target="_blank">Debugger</a></i> solo para OpenCL.
+					</p>
+					<p>
+						El proposito de utilizar esta librería es que permite acelerar el tiempo de proceso de construcción de matrices y realización de figuras 2D, siendo estas posicionadas y rotadas en mapas de matrices con n dimensiones. Además, el próximo foco de este proyecto será realizar las mismas funciones, pero utilizando figuras 3D, y con esta librería me permite trabajar desde GPUs y con aquellos núcleos disponibles en el equipo de trabajo, permitiendo la entrega de rápidos resultados.
+					</p>
+					<p>
+						OpenCL <a href="https://www.fixstars.com/en/opencl/book/OpenCLProgrammingBook/introduction-to-parallelization/" target="_blank">Page book</a>.
+					</p>
+					<p>
+						* La libreria OpenCl encontrada en <i>/usr/include/cl</i> o aquellas provenientes a la descarga de fuentes primaraias, no contienen los archivos que hacen referencia (.c) a las funciones de los archivos de cabecera (.h). Para esto se estima solucionar instalando <a href="https://github.com/KhronosGroup/OpenCL-ICD-Loader" target="_bñank">OpenCl-ICD-Loader de GithHub</a> que además necesita instalar la librería <a href="http://www.prinmath.com/csci5229/misc/install.html" target="_blank">OpenGL</a>.
+					</p>
+					<p>
+						<a href="https://www.khronos.org/registry/cl/sdk/2.1/docs/man/xhtml/" target="_blank">DOC</a> OpenCL 2.1.
+					</p>
+					<p>
+						<a href="https://www.khronos.org/registry/cl/specs/opencl-2.1.pdf" target="_blank">Especificaciones</a> OpenCL 2.1
+					</p>
+					<p>
+						Como instalar y correr OpenCL 2.1 <a href="https://wiki.tiker.net/OpenCLHowTo" target="_blank">link</a>.
+					</p>
+					<p>
+						Home: <a href="http://viennacl.sourceforge.net/viennacl-examples.html" target="_blank">ViennaCL</a>.
+					</p>
+				</li>
+				<li>
+					<h3>Eigen</h3>
+					<p>
+						Home: <a href="http://eigen.tuxfamily.org/index.php?title=Main_Page" target="_blank">Eigen</a>.
+					</p>
+					<p>
+						Documentación módulos: <a href="http://eigen.tuxfamily.org/dox/group__QuickRefPage.html" target="_blank">Módulos y archivos de cabecera</a>.
+					</p>
+				</li>
+				<li>
+					<h3>Boost</h3>
+					<p>
+						Home: <a href="http://www.boost.org/" target="_blank">Boost</a>.
+					</p>
+					<p>
+						Algebra linear: <a href="http://www.boost.org/doc/libs/1_60_0/libs/numeric/ublas/doc/index.html" target="_blank">Librería</a>.
+					</p>
+				</li>
+				<li>
+					<h3>STL</h3>
+					<p>
+						Home: <a href="https://www.sgi.com/tech/stl/" target="_blank">STL</a>
+					</p>
+				</li>
+			</ul>
+	</div>
 
+	<div id="TesisInstancias">
+		<h2>Tesis e Instancias</h2>
+
+		<p>
+			<i>Irregular Strip Packing Problem</i> es unos de los problemas cientificos que más repercuciones a tenido durante las últimas decadas y que diversos investigadores ya han llegado a una posible solución con la construcción de Heurísticas y Meta-heurísticas.
+		</p>
+		<p>
+			ISP forma parte de los problemas <i>Open Dimension</i> que corresponde a un área de la problemática principal de corte y empaque de figuras (<i>Cutting and Packing</i>), que significa que el contenedor en donde se posicionarán las figuras, posee un largo que es definido y fijo con anterioridad, sin embargo, el ancho es indefinido, dando la libertad de ajustarse eficientemente según las piezas insertadas en él. Mientras tanto, el siguiente documento explaya los tipos de problemas de corte y empaque, que además enseña aquellos ya existentes en las literaturas, logrando entender profundamente sus sub-problemas. <b>Documento</b>: <a href="http://teaching.csse.uwa.edu.au/units/CITS7212/Project/12/papers/Wascher%20et%20al%2007.pdf" target="_blank">Washer et al 2007</a>. <br><br>
+
+			<i>Optimal Allocation of Two- Dimensional</i>: <a href="../docs/Heuristica Nestring/Optimal Allocation of Two- Dimensional.pdf" target="_blank">Albano & Sapupo (1980)</a><br>
+
+			<i>A new procedure for deriving no fit polygon</i>: <a href="../docs/Heuristica Nestring/The irregular cutting-stock problem  a new procedure for deriving no fit polygon.pdf" target="_blank">Bennell, A. Dowsland, B.Dowsland (2000)</a><br>
+
+			<i>A 2-exchange heuristic for nesting problems</i>: <a href="../docs/Heuristica Nestring/A 2-exchange heuristic for nesting problems.pdf" target="_blank">Gomes, Oliveira (2002)</a><br>
+
+			<i>Geometry nestring problem: A tutorial</i>: <a href="../docs/Heuristica Nestring/The geometry of nesting problems: A  tutorial.pdf" target="_blank">Bennell & Oliveira (2006)</a><br>
+
+			<i>An iterated local search algorithm based on nonlinear programming for the irregular strip packing problem</i>: <a href="../docs/Heuristica Nestring/An iterated local search algorithm based on nonlinear programming for the irregular strip packing problem.pdf" target="_blank">Imamichi et al. (2007)</a><br>
+
+			<i>Fast neighborhood search for two and three-dimensional nesting problems</i>: <a href="../docs/Heuristica Nestring/Fast neighborhood search for two- and threedimensional nesting problems.pdf" target="_blank">Egeblad, Nielsen, Odgaard (2007)</a><br>
+
+		 	<i>Guide local search for overlap minimization</i>: <a href="../docs/Heuristica Nestring/Solving the Irregular Strip Packing Problem via guided local search for overlap minimization.pdf" target="_blank">Umetani et al. (2008)</a> <b>De aca rescatar referencias...</b><br>
+
+			Foco Nesting problem: <a href="../docs/Heuristica Nestring/Nesting_problems_exact_and_heuristic_algorithm.pdf" target="_blank"><i>Nesting problem</i></a>.
+		</p>
+
+		<h3><i>Pixel/Raster Method</i></h3>
+		<p>
+			<i>Pixel/Raster Method</i>, permite dividir el contenedor o lámina en pixeles en representación de una matriz de n dimensiones, dando la facilidad de identificación de si la posición es usada por una pieza. Pero a simple uso, esta metodología no funciona en piezas irregulares. Sin embargo, es importante la codificación de la matriz para realizar la representación del problema permitiendo el movimiento de las figuras cuyo objetivo es encontrar una ubicación en donde encajar la pieza de manera eficiente. Particularmente en este tipo de problemas, se utiliza del método <i>Bottom-left</i> en donde las piezas se ubican en dirección abajo izquierda dejando en ausencia muchos espacios durante el primer paso.
+		</p>
+
+		<h3><i>D-functions</i></h3>
+		<p>
+			Método que utiliza directamente la trigonometría.
+		</p>
+
+		<h3>No-fit polygon (NFP)</h3>
+		<p>
+			Es una de las tecnicas geométricas comúnmente usadas y encontrada en las literaturas de <a href="">Adamowicz & Albano (1976)</a>; <a href="../docs/Heuristica Nestring/Optimal Allocation of Two- Dimensional.pdf" target="_blank">Albano & Sapupo (1980)</a>, <a href="../docs/Heuristica Nestring/The irregular cutting-stock problem  a new procedure for deriving no fit polygon.pdf" target="_blank">Bennell et al. (2000)</a>; <a href="">Oliveira et al. (2000)</a>; <a href="">Gomes & Oliveira (2002)</a>; <a href="">Gomes & Oliveira (2006)</a>; <a href="../docs/Heuristica Nestring/An iterated local search algorithm based on nonlinear programming for the irregular strip packing problem.pdf" target="_blank">Imamichi et al. (2007)</a>; <a href="https://www.researchgate.net/profile/Toshihide_Ibaraki/publication/227623613_Solving_the_irregular_strip_packing_problem_via_guided_local_search_for_overlap_minimization/links/0046351847d7f9047c000000.pdf" target="_blank">Umetani et al. (2008)</a>. Es usada para realizar pruebas de intersección, permitiendo la configuración de espacio entre dos figuras con las siguientes propiedades:
+
+			<ul>
+				<li>Sobrepuesto <i>(Overlap)</i>: Si la pieza A está sobre la pieza B.</li>
+				<li>Tacto <i>(Touch)</i>: Si la pieza A toca el borde de la pieza B.</li>
+				<li>Separación <i>(Separated)</i>: Si entre la pieza A y B existe un espacio.</li>
+			</ul>
+
+			Cuando en las piezas se permite la rotación, solo puede ser calculado el NFP de cada par de piezas por cada combinación provocada por sus ángulos de rotación. Sin embargo, si el ángulo de rotación es libre, NFP no funcionará.
+		</p>
+
+		<h3><i>Phi-function</i></h3>
+		<p>
+			Es una generalización de NFP y que entrega una separación a medida entre par de piezas. Es limitado por una matemática compleja que lo define, pero sin embargo, permite solamente el trabajo con piezas convexas simples cuyo ángulo de rotación es libre.
+		</p>
+	</div>
 </body>
 </html>

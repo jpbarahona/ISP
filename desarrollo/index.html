@@ -20,11 +20,21 @@
 
 <h2>Contenido</h2>
 <ul>
+	<li><a href="#portabilidad">Multiplataforma</a></li>
 	<li><a href="#estructura-archivo">Estructura de Archivos</a></li>
 	<li><a href="#estructura-dato">Estructura de Datos</a></li>
 	<li><a href="#">Heurístticas</a></li>
 	<li><a href="#">Meta-Heurístticas</a></li>
 </ul>
+
+<div id="portabilidad">
+	<h2>Multiplataforma</h2>
+	<p>
+		El software es capaz de ser ejecutado en distintos ambientes de gnu/linux. Utiliza el constructor de sistemas CMake (que permite generar Makefile el cual es el originador del ejecutador binario). Sus librerías ViennaCL, STL, Boost y Eigen vienen junto a la aplicación.
+
+		<a href="http://stackoverflow.com/questions/25789644/makefile-vs-cmake" target="_blank">Makefile vs CMake</a>
+	</p>
+</div>
 
 <h2 id="estructura-archivo">Estructura de Archivos</h2>
 <p>
@@ -33,20 +43,20 @@
 
 <pre>
 	ISP/
-	 |	Makefile
-	 |	src/
-	 |	 |	Include/
-	 |	 |	 |	List.h
-	 |	 |	 |	Nodo.h
-	 |	 |	 |	ISP.h
-	 |	 |	 |	ReadParameters.h
-	 |	 |	 |	NFP.h
-	 |	 |	 |	NFR.h
-	 |	 |	 |	BL.h
-	 |	 |	Object/ (Almacena todos los archivos objetos (.o) que permiten generar el compilador)
-	 |	 |	*.cc (Diversos archivos C++)
-	 |	 |	Makefile
-	 |	ISP
+	 |--Makefile
+	 |--src/
+	 |	 |--Include/
+	 |	 |	 |--List.h
+	 |	 |	 |--Nodo.h
+	 |	 |	 |--ISP.h
+	 |	 |	 |--ReadParameters.h
+	 |	 |	 |--NFP.h
+	 |	 |	 |--NFR.h
+	 |	 |	 |--BL.h
+	 |	 |--Object/ (Almacena todos los archivos objetos (.o) que permiten generar el compilador)
+	 |	 |--*.cc (Diversos archivos C++)
+	 |	 |--Makefile
+	 |--ISP
 </pre>
 
 
