@@ -14,6 +14,12 @@
 	<p>
 		Citas constructivas para la generación de la tesis de forma solida y consisa. Se consideran preguntas en base al uso del método NFP, heuristica bottom left y IFR (inner fit rectangle), encontradas en diversas literaturas, cuyas respuestas son argumentadas con ecuacines matemáticas, acompañadas con pseudo códigos y citas adheridas, con el fín de ordenar la idea central de la tesis.
 	</p>
+
+	<h2>Impacto de la geometría en ISP.</h2>
+	<p>
+		Siendo un problema que redondea las propiedades geométricas, se implementa bastante la programación lineal con el uso de la trigonometría que permite detectar si piezas entre sí se solapan y calcular la distancia requerida de su traslación, logrando resultados factibles integrados en diversas investigaciones.
+	</p>
+
 	<h2>¿Como se define un algoritmo heurístico?</h2>
 	<p>
 		Para aquellos algoritmos heurísticos encontrados en las literaturas de ISP, reciben el nombre los que realizan cierto método de búsqueda, generalmente de búsqueda local. El NFP corresponde a un método de búsqueda dado que dos polígonos deben rotar orbitalmente para encontrar sus posiciones sin solaparse. (Confirmación: ? (entregar cita)). Bottom-Left es un método que permite posicionar las piezas dentro del contenedor, cuyo algoritmo es 100% heurístico, dado que debe realizar iteraciones de busquedas de posición para insertar dichas figuras con la autorización de NFP entre dos figuras. (Confirmación: ? (entregar cita))
@@ -23,22 +29,38 @@
 		<i>"In this paper an automatic approach is presented which transforms the allocation problem into a search process through a "space" of candidate solutions. Since this space is generally very large, heuristic methods will be employed for shortening the search."</i> <a href="../docs/Heuristica Nestring/Optimal Allocation of Two- Dimensional.pdf" target="_blank">Albano, A., & Sapuppo, G. (1980). Optimal allocation of two-dimensional irregular shapes using heuristic search methods. Systems, Man and Cybernetics, IEEE Transactions on, 10(5), 242-248.</a>
 	</p>
 	<h2>¿Qué algoritmo corresponde el método de NFP?</h2>
-	<h2>¿Qué otros métodos de trigonometria existen en vez de NFP y por qué elegir NFP?</h2>
-	<h2>¿Es importante agregar el método Miskowski para expresar NFP?</h2>
-	<h2>Paper con mejores resultados hasta el año 2006. ¿Existen mejores hasta hoy?</h2>
+	<h2>¿Qué otros métodos de trigonometría existen en vez de NFP y por qué elegir NFP?</h2>
 	<p>
-		<i>
-			"In this paper a hybrid algorithm to solve Irregular Strip Packing problems is presented. The metaheuristic simulated
-			annealing is used to guide the search over the solution space while linear programming models are solved to generate
-			neighbourhoods during the search process. These linear programming models, which are used to locally optimise the
-			layouts, derive from the application of compaction and separation algorithms.
-			Computational tests were run using instances that are commonly used as benchmarks in the literature. The best
-			results published so far have been improved by this new hybrid packing algorithm."
-		</i>
-		<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes, A. M., & Oliveira, J. F. (2006). Solving irregular strip packing problems by hybridising simulated annealing and linear programming. European Journal of Operational Research, 171(3), 811-829.</a>. Resumen Pag. 1
+		Para resolver problemas de ISP, se accede a diversos procedimientos trigonométricos siendo factibles en resultados, pero dado a soluciones entregadas por investigaciones que implementan el método NFP, concluyen que sus soluciones son más eficientes que técnicas trigonométricas ya existentes.
+	</p>
+	<h3>¿Qué tecnicas trigonométricas existen y cuales son sus falencias con respecto a NFP?</h3>
+	<h2>¿Es importante agregar el método Miskowski para expresar NFP?</h2>
+	<p>
+		Este <i>paper</i> implementa el método NFP con Minkowski <a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell, J. A., & Song, X. (2008). A comprehensive and robust procedure for obtaining the nofit polygon using Minkowski sums. Computers & Operations Research, 35(1), 267-281.</a>
+	</p>
+	<h2>¿Por qué NFP no ocupa la trigonometría, siendo que ISP es un problema que en la mayoria de las literaturas implementan herramientas con técnicas triconométricas?</h2>
+	<h2>¿Cuales son las otras técnicas que permiten generar NFP? y ¿Qué destaca la investigación de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>?</h2>
+	<h3>Organizadas por fechas de lanzamiento:</h3>
+	<p>
+		<a href="../docs/No-fit_polygon/An_approach_to_the_two_dimensional_irregular_cutting_stock_problem.pdf">Art (1966):</a>  Indicios de un nuevo método para competir con las practicas presentes en las industrias. Iniciando el concepto de "envolturia de figuras" ("<i>shape envelop</i>").
+	</p> 
+	<p>
+		<a href="../docs/No-fit_polygon/Nesting_two_dimensional_shapes_in_rectangular_modules.pdf" target="_blank">Adamowicz and Albano (1976)</a>: Implementa NFP con un módulo de envoltorio rectangular identificando la superficie mínima de la pieza.
+	</p>
+	<p>
+		Cuninghame-Green (1989) [No presente para el acceso, sin embargo la siguiente información es extraída de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>]: La configuración de obstáculos ("configuration space obstacle") es común encontrarla en áreas de ingeniería y movimientos de robots, pero que denota principalmente en la cosntrucción de NFP.
+	</p>
+	<p>
+		Stoyan and Ponomarenko (1977) [No presente para el acceso, sin embargo la siguiente información es extraída de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>], <a href="../docs/No-fit_polygon/Modeling_of_packing_problems.pdf" target="_blank">Scheithauer and Terno (1993)</a>, <a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell et al. (2001).</a>: El término "Hodografia" ("Hodograph") es a menudo usado para describir NFP, interpretando en un plano gemétrico la descripción de la trayectoria, según el extremo de los vectores.
 	</p>
 	<h2>NFP:</h2>
-	<h3>Un nuevo procedimiento que permite implementar NFP. (2001)</h3>
+	<p>
+		Hay que mencionar que NFP es una herramienta y no una solución y es por esto que en diversas literaturas es mencionado su uso de manera abstracta o que aveces ni se menciona. Además, es un método opuesto a las técnicas trigonométricas implementadas en otras literaturas.
+	</p>
+	<p>
+		Consta de 2 piezas siendo una orbitando alrededor del borde de otra que esta fija.
+	</p>
+	<h3>Un nuevo procedimiento que permite implementar NFP. <a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">[Bennell, Dowsland, Dowsland (2001).].</a></h3>
 	<p>
 		<i>
 			"The no"t polygon is a powerful and e!ective tool for handling the geometry required for a range of
@@ -50,13 +72,13 @@
 			without an indepth understanding of the underlying mathematics. The result is an approach that is both very
 			general and easy to use."
 		</i>
-		<a href="../docs/Heuristica Nestring/The irregular cutting-stock problem  a new procedure for deriving no fit polygon.pdf" target="_blank">Bennell, J. A., Dowsland, K. A., & Dowsland, W. B. (2001). The irregular cutting-stock problem—a new procedure for deriving the no-fit polygon. Computers & Operations Research, 28(3), 271-287.</a>. Resumen Pag. 1
+		<a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell, J. A., Dowsland, K. A., & Dowsland, W. B. (2001). The irregular cutting-stock problem—a new procedure for deriving the no-fit polygon. Computers & Operations Research, 28(3), 271-287.</a>. Resumen Pag. 1
 	</p>
 	<h4>Algoritmos NFP & Miskowskin Pag. 12-13</h4>
 	<p>
-		<a href="../docs/Heuristica Nestring/The irregular cutting-stock problem  a new procedure for deriving no fit polygon.pdf" target="_blank">Bennell, J. A., Dowsland, K. A., & Dowsland, W. B. (2001). The irregular cutting-stock problem—a new procedure for deriving the no-fit polygon. Computers & Operations Research, 28(3), 271-287.</a>.
+		<a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell, J. A., Dowsland, K. A., & Dowsland, W. B. (2001). The irregular cutting-stock problem—a new procedure for deriving the no-fit polygon. Computers & Operations Research, 28(3), 271-287.</a>.
 	</p>
-	<h3>Generación de un <i>no-fit polygon</i> robusto y completo. (2007)</h3>
+	<h3>Generación de un <i>no-fit polygon</i> robusto y completo. [<a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>.</h3>
 	<p>
 		<i>
 			"The no-fit polygon is a construct that can be used between pairs of shapes for fast and efficient handling of geometry
@@ -66,16 +88,39 @@
 			no-fit polygons which does not suffer from the typical problem cases found in the other approaches from the literature.
 			Furthermore, the algorithm only involves two simple geometric stages so it is easily understood and implemented."
 		</i>
-		<a href="../docs/Heuristica Nestring/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke, E. K., Hellier, R. S., Kendall, G., & Whitwell, G. (2007). Complete and robust no-fit polygon generation for the irregular stock cutting problem. European Journal of Operational Research, 179(1), 27-49.</a> Parte: <i>Abstract</i>, página: 1 (23).
+		<a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke, E. K., Hellier, R. S., Kendall, G., & Whitwell, G. (2007). Complete and robust no-fit polygon generation for the irregular stock cutting problem. European Journal of Operational Research, 179(1), 27-49.</a> Parte: <i>Abstract</i>, página: 1 (23).
 	</p>
-	<h4>Algoritmo NFP página 41.</h4>
+	<h4>Algoritmo NFP y <i>Next point start</i> en la página 41.</h4>
+
+	<p>
+		La intención de este <i>paper</i>, es entregar un método de desarrollo NFP más sencillo dado que la percepción que se tiene en literaturas anteriores es alta complejidad y que fue implementado en pocas investigaciones porque no existe una propuesta general que abarque a todos los problemas y deben ser especificado caso por casos para llegar al resultado.
+	</p>
+	<p>
+		Es importante destacar que las rotaciones de figuras es esencial añadirlas gracias a sus propiedades fisicas o lineales que permiten entregar mejores diseños de solución. Sin embargo, dada a su magnitud de posibles rotaciones, el conjunto de rotaciones es limitadas para entregar resultados más rapidos en eficiencia y construcción.
+	</p>
 	<h2>¿Es seguro añadir 2-exchange a la tesis?</h2>
 	<p>
 		Tesis: <a href="../docs/Gomes-&-Oliveira/A_2-exchange_heuristic_for_nesting_problems.pdf" target="_blank">Gomes, A. M., & Oliveira, J. F. (2002). A 2-exchange heuristic for nesting problems. European Journal of Operational Research, 141(2), 359-370.</a>
 	</p>
 	<p>
-		Siendo el caso de que a la fecha, la tesis de <a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006)</a> es la más eficiente. Pero se pretende evaluar si utilizando el NFP de <a href="../docs/Heuristica Nestring/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> y <i>placement heuristic</i> se expresa un avance importante.
+		Siendo el caso de que a la fecha, la tesis de <a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006)</a> es la más eficiente. Pero se pretende evaluar si utilizando el NFP de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> y <i>placement heuristic</i> se expresa un avance importante.
 	</p>
 	<h2>Según <i>Benchmark</i> entrgados por las literatura de no-fit polygon robusto y completo (2007) y 2-exchange ¿Se desmuestra un cambio importante en eficiencia?</h2>
+	<h2><i>Paper</i> con mejores resultados hasta el año 2006. ¿Existen mejores hasta hoy?</h2>
+	<p>
+		<i>
+			"In this paper a hybrid algorithm to solve Irregular Strip Packing problems is presented. The metaheuristic simulated
+			annealing is used to guide the search over the solution space while linear programming models are solved to generate
+			neighbourhoods during the search process. These linear programming models, which are used to locally optimise the
+			layouts, derive from the application of compaction and separation algorithms.
+			Computational tests were run using instances that are commonly used as benchmarks in the literature. The best
+			results published so far have been improved by this new hybrid packing algorithm."
+		</i>
+		<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes, A. M., & Oliveira, J. F. (2006). Solving irregular strip packing problems by hybridising simulated annealing and linear programming. European Journal of Operational Research, 171(3), 811-829.</a>. Resumen Pag. 1
+	</p>
+	<h2>¿Por qué <i>compaction & separation (<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006))</a></i> obtiene mejores resultados hasta dicha fecha?</h2>
+	<h2>¿Por qué NFP y no <i>compaction & separation (<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006))</a></i>?</h2>
+	<h2><i>Benchmark</i> donde implementan NFP y <i>bottom left</i>, y comparar resultados con <i>compaction & separation (<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006))</a></i>.</h2>
+	<h2>¿Existen literaturas heurísticas donde implementan el NFP de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> con Bottom-left?</h2>
 </body>
 </html>
