@@ -19,7 +19,35 @@
 	<p>
 		Siendo un problema que redondea las propiedades geométricas, se implementa bastante la programación lineal con el uso de la trigonometría que permite detectar si piezas entre sí se solapan y calcular la distancia requerida de su traslación, logrando resultados factibles integrados en diversas investigaciones.
 	</p>
-
+	<h2>Geometría computacional.</h2>
+	<p>
+		En las literaturas, podemos encontrar métodos que manipulan las figuras como piezas o polígonos dado a su complejidad y lograr una representación totalmente precisa, llegando a ser factibles en sus resultados. Cabe mencionar que representar las figuras como polígonos, nos permite medir eficazmente si intersecta con otro polígono con diferentes herraminetas trigonométricas, viendo aumentar su tiempo computacional proporcionalmente al número de lados del polígono, pero manipular de manera factible las figuras irregulares y capacidad de actualizarse en caso de presentar cambios. Brevemente mencionaremos algunos métodos que nos permitirán representar las piezas o polígonos y medir factiblemente si dos piezas se solapan entre sí.
+	</p>
+	<h3><i>Pixel/Raster</i></h3>
+	<p>
+		Se usa una matriz donde los dígitos como pixeles representan el área demarcada por la pieza.
+		[ OLIVEIRA , J., AND F ERREIRA , J.  Algorithms for nesting problems, Applied Simulated Annealing. In Lecture Notes in Economics and Maths Systems , R. Vidal, Ed., vol. 396. Springer-Verlag, 1993, pp. 255–274. ], usa una simple codificación que cada pixel k = 0,1,2,.. toma el valor de la pieza k para representarla dentro de la matriz.
+	</p>
+	<p>
+		[ SEGENREICH , S., AND B RAGA , M.  Optimal nesting of general plane figures: a Monte Carlo heuris- tical approach. Computers & Graphics 10 (1986), 229–237. ] no solo propone la identificación de la pieza en un plano, sino que también permite visualizar si dos piezas están en contacto. En donde el dígito 1 representa el borde y 3 el área interna. Entonces cuando en la matriz se detecta un número mayor o igual a 4, significa que está sobrepuesta con otra, y cuando existe un pixel igual a 2 es que dos piezas están en contacto. Este resultado es factible.
+	</p>
+	<p>
+		[ BABU , A., AND B ABU , N. A generic approach for nesting of 2-d parts in 2-d sheets using genetic and heuristic algorithms. Computer-Aided Design 33 (2001), 879–891. ] Utiliza el dígito 0 como para representar la parte interna de la pieza y mayor a 0 para pixeles adjacentes.
+	</p>
+	<p>
+		La desventaja de este método es el incremento computacional refeljado al actualizar un pixel y es realmente complejo.
+	</p>
+	<h3><i>Trigonometría</i></h3>
+	<p>
+		Esté método considera la pieza como un polígono, permitiendo como ventaja al tratar con piezas irregulares. Su complejidad se ve aumentado proporcionalmente a la cantidad de lados delpolígono. El mayor problema de utilizar polígonos es garatizar que no se solapen. La primera idea es utilizar trigonometría. Sin embargo, existen herramientas que permite identificar si dos segmentos intersectan o si un vertice se encuentra dentro de otro polígono, siendo asi un método complejo. De hecho, el tiempo computacional de <i>pixel/raster</i> es cuadratico al tamaño de la pieza y usar la trigonometría, el tiempo computacional es exponencial al número de segmentos de los polígonos.
+	</p>
+	<p>
+		Como herramienta para medir si dos polígonos se solapan, primero se generó un método que envuelve en un rectangulo los polígonos. Con ellos se define si estan sobrepuestos si (a) dos rectangulos se intersectan y (b) si un par de segmento del polígono intersecta entonces el rectangulo se encuentra solapado (dado al método extendido de envolturia de rectangulo por segmento del polígono).
+	</p>
+	<p>
+		Principalmente el foco de la trignometría es obtener la posicion relativa entre dos segmentos.
+		[   PREPARATA ,  F., AND S HAMOS ,  M. Computational Geometry:  An Introduction .   Springer-Verlag, 1985. ] Proponen una medida que identifica si un vertice se encuentra dentro de un polígono, cuyo vertice se encuentra originado por 2 segmentos. Aquí nace <i>D function</i>.
+	</p>
 	<h2>¿Como se define un algoritmo heurístico?</h2>
 	<p>
 		Un algoritmo heurístico entrega soluciones optimas o cercanas al resultado ideal, ya que existen problemas que nunca tendran una única solución. Por ende, al encontrar una respuesta optima, se tiende a la conformidad de esta. Comúnmente presente en problemas de complejidad <i>NP-HARD</i>, formando parte de este conjunto, los problemas de <i>cutting & packing</i>.
@@ -52,7 +80,18 @@
 				<i>Separation</i> elimina todos los casos de <i>overlaps</i> entre piezas buscando un conjunto traslaciones limitado a un total mínimo de movimientos. Este método es factible cuando el tamaño de ambas dimensiones de la lámina son indefinidas, pero si el ancho es estático, encontrará resultados erroneos de posicionamiento.
 			</p>
 		</li>
+		<li>
+			<p>
+				<i>D function</i>: Permite obtener la posición relativa entre dos segmentos. Este método fue introducido por [KONOPASEK , M. Mathematical treatments of some apparel marking and cutting problems. Tech. Rep. 99-26-90857-10, Department of Commerce Report, U.S, 1985.] permitiendo calcular la distancia de un punto a una linea. [MAHADEVAN , A. Optimisation in computer aided pattern packing . PhD thesis, North Carolina State University, 1984] entrega un estudio que diferencia todos los casos.
+			</p>
+		</li>
+		<li>
+			<p>
+				<i>Phi function</i>:
+			</p>
+		</li>
 	</ul>
+	<h2>¿Cuál es la diferencia de utilizar el deslizamiento para NFP entre D function y Minkowski sum? (<a href="../docs/Heuristica Nestring/Nesting_problems_exact_and_heuristic_algorithm.pdf" target="_blank">Sykora, A. M. (2013).</a> Pag. 21 - 23)</h2>
 	<h2>¿Es importante agregar el método Miskowski para expresar NFP? <a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell & Song(2008).</a></h2>
 	<p>
 		Existe un <i>paper</i> en donde se implementa Miskowski <a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell & Song(2008)</a> y comparando <i>Benchmark</i> con <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> se puede ver gran diferencia en tiempo de ejecución a favor de Bennell con la implementación trigonométrica Miskowski, entregando resultados inmediatos.
@@ -63,7 +102,7 @@
 	</p>
 	<h3>¿Realiza rotaciones?</h3>
 	<p>
-		En dicho <i>paper</i> no menciona la implementación con rataciones, dado que es un aspecto irrelevante para la generación de NFP.
+		En dicho <i>paper</i> no menciona la implementación con rataciones, dado que es un aspecto irrelevante para la generación de NFP. Sin embargo, NFP se calcula por cada rotación descrita entre pares de polígonos.
 	</p>
 	<h3>¿Abarca todos los casos?</h3>
 	<p>
@@ -79,7 +118,7 @@
 	<h2>¿Cuales son las otras técnicas que permiten generar NFP? y ¿Qué destaca la investigación de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>?</h2>
 	<h3>Organizadas por fechas de lanzamiento:</h3>
 	<p>
-		<a href="../docs/No-fit_polygon/An_approach_to_the_two_dimensional_irregular_cutting_stock_problem.pdf">Art (1966):</a>  Indicios de un nuevo método para competir con las practicas presentes en las industrias. Iniciando el concepto de "envolturia de figuras" ("<i>shape envelop</i>").
+		<a href="../docs/No-fit_polygon/An_approach_to_the_two_dimensional_irregular_cutting_stock_problem.pdf" target="_blank">Art (1966):</a>  Indicios de un nuevo método para competir con las practicas presentes en las industrias. Iniciando el concepto de "envolturia de figuras" ("<i>shape envelop</i>").
 	</p> 
 	<p>
 		<a href="../docs/No-fit_polygon/Nesting_two_dimensional_shapes_in_rectangular_modules.pdf" target="_blank">Adamowicz and Albano (1976)</a>: Implementa NFP con un módulo de envoltorio rectangular identificando la superficie mínima de la pieza.
