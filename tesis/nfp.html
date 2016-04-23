@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Documentación proyecto ISP | Tesis - NFP
+	</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Construcción NFP de la tesis proyecto ISP</h1><h3>Por: Juan-Pablo Andrés Barahona Aravena</h3>
+
+	<p><a href="../">ISP</a> > <a href="index.html">Tesis</a> > <a href="#">NFP</a></p>
+	
+	<p>
+		Citas constructivas para la generación de la tesis de forma solida y consisa. Se consideran preguntas en base al uso del método NFP, heuristica bottom left y IFR (inner fit rectangle), encontradas en diversas literaturas, cuyas respuestas son argumentadas con ecuaciones matemáticas, acompañadas con pseudo códigos y citas adheridas, con el fín de ordenar la idea central de la tesis. Además, se comparan resultados con diversos algoritmos trigonométricos y métodos encontrados en las literaturas, con la idea de apoyar el método NFP.
+	</p>
+	
+	<h2>Impacto de la geometría en ISP.</h2>
+	<p>
+		Siendo un problema que redondea las propiedades geométricas, se implementa bastante la programación lineal con el uso de la trigonometría que permite detectar si piezas entre sí se solapan y calcular la distancia requerida de su traslación, logrando resultados factibles integrados en diversas investigaciones.
+	</p>
+	<h2>Geometría computacional.</h2>
+	<p>
+		En las literaturas, podemos encontrar métodos que manipulan las figuras como piezas o polígonos dado a su complejidad y lograr una representación totalmente precisa, llegando a ser factibles en sus resultados. Cabe mencionar que representar las figuras como polígonos, nos permite medir eficazmente si intersecta con otro polígono con diferentes herraminetas trigonométricas, viendo aumentar su tiempo computacional proporcionalmente al número de lados del polígono, pero manipular de manera factible las figuras irregulares y capacidad de actualizarse en caso de presentar cambios. Brevemente mencionaremos algunos métodos que nos permitirán representar las piezas o polígonos y medir factiblemente si dos piezas se solapan entre sí.
+	</p>
+	<h3><i>Pixel/Raster</i></h3>
+	<p>
+		Se usa una matriz donde los dígitos como pixeles representan el área demarcada por la pieza.
+		[ OLIVEIRA , J., AND F ERREIRA , J.  Algorithms for nesting problems, Applied Simulated Annealing. In Lecture Notes in Economics and Maths Systems , R. Vidal, Ed., vol. 396. Springer-Verlag, 1993, pp. 255–274. ], usa una simple codificación que cada pixel k = 0,1,2,.. toma el valor de la pieza k para representarla dentro de la matriz.
+	</p>
+	<p>
+		[ SEGENREICH , S., AND B RAGA , M.  Optimal nesting of general plane figures: a Monte Carlo heuris- tical approach. Computers & Graphics 10 (1986), 229–237. ] no solo propone la identificación de la pieza en un plano, sino que también permite visualizar si dos piezas están en contacto. En donde el dígito 1 representa el borde y 3 el área interna. Entonces cuando en la matriz se detecta un número mayor o igual a 4, significa que está sobrepuesta con otra, y cuando existe un pixel igual a 2 es que dos piezas están en contacto. Este resultado es factible.
+	</p>
+	<p>
+		[ BABU , A., AND B ABU , N. A generic approach for nesting of 2-d parts in 2-d sheets using genetic and heuristic algorithms. Computer-Aided Design 33 (2001), 879–891. ] Utiliza el dígito 0 como para representar la parte interna de la pieza y mayor a 0 para pixeles adjacentes.
+	</p>
+	<p>
+		La desventaja de este método es el incremento computacional refeljado al actualizar un pixel y es realmente complejo.
+	</p>
+	<h3><i>Trigonometría</i></h3>
+	<p>
+		Esté método considera la pieza como un polígono, permitiendo como ventaja al tratar con piezas irregulares. Su complejidad se ve aumentado proporcionalmente a la cantidad de lados delpolígono. El mayor problema de utilizar polígonos es garatizar que no se solapen. La primera idea es utilizar trigonometría. Sin embargo, existen herramientas que permite identificar si dos segmentos intersectan o si un vertice se encuentra dentro de otro polígono, siendo asi un método complejo. De hecho, el tiempo computacional de <i>pixel/raster</i> es cuadratico al tamaño de la pieza y usar la trigonometría, el tiempo computacional es exponencial al número de segmentos de los polígonos.
+	</p>
+	<p>
+		Como herramienta para medir si dos polígonos se solapan, primero se generó un método que envuelve en un rectangulo los polígonos. Con ellos se define si estan sobrepuestos si (a) dos rectangulos se intersectan y (b) si un par de segmento del polígono intersecta entonces el rectangulo se encuentra solapado (dado al método extendido de envolturia de rectangulo por segmento del polígono).
+	</p>
+	<p>
+		Principalmente el foco de la trignometría es obtener la posicion relativa entre dos segmentos.
+		[   PREPARATA ,  F., AND S HAMOS ,  M. Computational Geometry:  An Introduction .   Springer-Verlag, 1985. ] Proponen una medida que identifica si un vertice se encuentra dentro de un polígono, cuyo vertice se encuentra originado por 2 segmentos. Aquí nace <i>D function</i>.
+	</p>
+	<h2>¿Como se define un algoritmo heurístico?</h2>
+	<p>
+		Un algoritmo heurístico entrega soluciones optimas o cercanas al resultado ideal, ya que existen problemas que nunca tendran una única solución. Por ende, al encontrar una respuesta optima, se tiende a la conformidad de esta. Comúnmente presente en problemas de complejidad <i>NP-HARD</i>, formando parte de este conjunto, los problemas de <i>cutting & packing</i>.
+	</p>
+	<p>
+		Para aquellos algoritmos heurísticos encontrados en las literaturas de ISP, reciben el nombre los que realizan cierto método de búsqueda, generalmente de búsqueda local. El NFP corresponde a un método de búsqueda dado que dos polígonos deben rotar orbitalmente para encontrar sus posiciones sin solaparse. (Confirmación: falsa, la mayoria de las literaturas hablan como una herramienta y que es eficiente comparandola con otros métodos trigonométricos para medir si dos piezas se encuentran solapadas). Bottom-Left es un método goloso que permite posicionar las piezas dentro del contenedor, cuyo algoritmo es 100% heurístico, dado que debe realizar iteraciones de busquedas de posición para insertar dichas figuras con la autorización de NFP entre dos figuras. (Confirmación: verdadera, todas las literaturas mencionan este algoritmo como solución heurística.)
+	</p>
+	<p>
+		Cita argumentando la identificación de un algoritmo heurístico: <br>
+		<i>"In this paper an automatic approach is presented which transforms the allocation problem into a search process through a "space" of candidate solutions. Since this space is generally very large, heuristic methods will be employed for shortening the search."</i> <a href="../docs/Heuristica Nestring/Optimal Allocation of Two- Dimensional.pdf" target="_blank">Albano, A., & Sapuppo, G. (1980). Optimal allocation of two-dimensional irregular shapes using heuristic search methods. Systems, Man and Cybernetics, IEEE Transactions on, 10(5), 242-248.</a>
+	</p>
+	<h2>¿Qué algoritmo corresponde el método NFP?</h2>
+	<p>
+		Para representar el método NFP existen diversos métodos heurísticos planteados en las literaturas. A pesar de ser una herramienta para medir si dos cuerpos se encuentran solapados, se deben realizar iteraciones para encontrar la posición que orbita un polígono B alrededor de los bordes de la pieza A estática. Si A presenta agujeros, B debe considerar dichos vertices en su interior pero sin intersectar A.
+	</p>
+	<h2>Métodos trigonométricos vs NFP.</h2>
+	<p>
+		Para resolver problemas de ISP, se accede a diversos procedimientos trigonométricos siendo factibles en resultados, pero dado a soluciones entregadas por investigaciones que implementan el método NFP, concluyen que sus soluciones son más eficientes que técnicas trigonométricas ya existentes. Porque, según indica en la tesis <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> (Pág. 3) los métodos trigonométricos y NFP, permiten en general medir si dos figuras se encuentran solapadas con el procedimiento de que una pieza B órbita al rededor de una pieza fija A y definir la posición optima para reducir drasticamente los residuos de espacio, siguiendo un curso de consumo excesivo de recursos del computador en ambos casos. Sin embargo, los métodos trigonométricos entregan soluciones factibles para cualquier tipo de figuras y NFP decae en este aspecto por lo que se busca un método robusto que permita entregar resultados con diferentes piezas. (solución: <a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell & Song(2008).</a>) Pero la gran diferencia que tienen ambos es que siendo NFP escaso para abarcar todas las piezas, permite realizar solo una vez la definición de posicionamiento entre figuras para un cojunto de piezas finitas (piezas repetidas para un mismo diseño), realizando procesos previos y guardando los datos con infomarción respectiva, mientras que los métodos trigonométricos, deben realizar su proceso cada vez que se quiera analizar el diseño y realizar calculos ya hechos anteriormente. Además, se destaca NFP de que solo se define un número arbitrario de vertices para realizar el proceso de órbita, siendo la cantidad de veces que la figura B debe girar alrededor de A y así, reducir la cantidad de mediciones si dichas figuras se solapan, mientras que la trigonometría debe detectar todos los casos posibles.
+	</p>
+	<h3>¿Cuales son los otros métodos trigonométricos encontrados en las literaturas que permiten medir si dos cuerpos se solapan entre sí?</h3>
+	<ul>
+		<li>
+			<p>
+				<i>Compaction & separation</i> <a href="../docs/Trigonometria/Compaction_and_separation_algorithms_for_non-convex_polygons_and_their_applications.pdf" target="_blank">(Li, Z., & Milenkovic, V. (1995))</a>: Método trigonométrico implementado como programación lineal, permite encajar 2 figuras sin solapar con características concavas en base al método de Miskowki sum (que es utilizado además en ingeniería de movimientos de robots) permitiendo encontrar las irregularidades de las piezas. El <i>paper</i> separa las figuras en subsecciones definidas con la teoría <i>star-shaped</i>, disminuyendo el computo al implementar Miskowskin sum a O(mn log(mn)). Sin embargo, si existen piezas cuyas partes no fueron separadas, se ejecuta la acción de <i>star-shaped</i>.
+			</p>
+			<p>
+				<i>Compaction</i> es usado con el modelo <i>position-based</i> que contiene restricciones artificiales limitando espacios a regiones convexas factibles. Estas restricciones son generadas por <i>locality heuristic</i> que está basado en Miskowskin sum definiendo un conjunto de posiciones no solapadas entre pares de piezas.
+			</p>
+			<p>
+				<i>Separation</i> elimina todos los casos de <i>overlaps</i> entre piezas buscando un conjunto traslaciones limitado a un total mínimo de movimientos. Este método es factible cuando el tamaño de ambas dimensiones de la lámina son indefinidas, pero si el ancho es estático, encontrará resultados erroneos de posicionamiento.
+			</p>
+		</li>
+		<li>
+			<p>
+				<i>D function</i>: Permite obtener la posición relativa entre dos segmentos. Este método fue introducido por [KONOPASEK , M. Mathematical treatments of some apparel marking and cutting problems. Tech. Rep. 99-26-90857-10, Department of Commerce Report, U.S, 1985.] permitiendo calcular la distancia de un punto a una linea. [MAHADEVAN , A. Optimisation in computer aided pattern packing . PhD thesis, North Carolina State University, 1984] entrega un estudio que diferencia todos los casos.
+			</p>
+		</li>
+		<li>
+			<p>
+				<i>Phi function</i>:
+			</p>
+		</li>
+	</ul>
+	<h2>¿Cuál es la diferencia de utilizar el deslizamiento para NFP entre D function y Minkowski sum? (<a href="../docs/Heuristica Nestring/Nesting_problems_exact_and_heuristic_algorithm.pdf" target="_blank">Sykora, A. M. (2013).</a> Pag. 21 - 23)</h2>
+	<h2>¿Es importante agregar el método Miskowski para expresar NFP? <a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell & Song(2008).</a></h2>
+	<p>
+		Existe un <i>paper</i> en donde se implementa Miskowski <a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell & Song(2008)</a> y comparando <i>Benchmark</i> con <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> se puede ver gran diferencia en tiempo de ejecución a favor de Bennell con la implementación trigonométrica Miskowski, entregando resultados inmediatos.
+	</p>
+	<h3>¿Es más rapido?</h3>
+	<p>
+		Si, comparado con <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>.
+	</p>
+	<h3>¿Realiza rotaciones?</h3>
+	<p>
+		En dicho <i>paper</i> no menciona la implementación con rataciones, dado que es un aspecto irrelevante para la generación de NFP. Sin embargo, NFP se calcula por cada rotación descrita entre pares de polígonos.
+	</p>
+	<h3>¿Abarca todos los casos?</h3>
+	<p>
+		Si, este método permite detectar agujeros y espacios concavos de las piezas.
+	</p>
+	<h2>¿Por qué NFP no ocupa la trigonometría, siendo que ISP es un problema que en la mayoria de las literaturas implementan herramientas con técnicas trigonométricas?</h2>
+	<p>
+		R: Falso, porque al ser una herramienta que permite medir si dos piezas se encuentran solapadas, varias literaturas implementan la trigonometría para la traslación de las piezas siendo una solución factible. 
+	</p>
+	<p>
+		Muchos de los NFP ultimamente presentados en las literaturas, presentan un algoritmo robusto con la intención de abarcar figuras concavas y convexas utilizando métodos geométricos que implementan la trigonometría. Particularmete el método Miskowskin sum, siendo principalmente utilizado en robots para la localización de obstaculos, el uso en NFP es para definir bordes y vertices de ambas piezas que permiten generar el objeto NFP.
+	</p>
+	<h2>¿Cuales son las otras técnicas que permiten generar NFP? y ¿Qué destaca la investigación de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>?</h2>
+	<h3>Organizadas por fechas de lanzamiento:</h3>
+	<p>
+		<a href="../docs/No-fit_polygon/An_approach_to_the_two_dimensional_irregular_cutting_stock_problem.pdf" target="_blank">Art (1966):</a>  Indicios de un nuevo método para competir con las practicas presentes en las industrias. Iniciando el concepto de "envolturia de figuras" ("<i>shape envelop</i>").
+	</p> 
+	<p>
+		<a href="../docs/No-fit_polygon/Nesting_two_dimensional_shapes_in_rectangular_modules.pdf" target="_blank">Adamowicz and Albano (1976)</a>: Implementa NFP con un módulo de envoltorio rectangular identificando la superficie mínima de la pieza.
+	</p>
+	<p>
+		Cuninghame-Green (1989) [No presente para el acceso, sin embargo la siguiente información es extraída de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>]: La configuración de obstáculos ("configuration space obstacle") es común encontrarla en áreas de ingeniería y movimientos de robots, pero que denota principalmente en la cosntrucción de NFP.
+	</p>
+	<p>
+		Stoyan and Ponomarenko (1977) [No presente para el acceso, sin embargo la siguiente información es extraída de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>], <a href="../docs/No-fit_polygon/Modeling_of_packing_problems.pdf" target="_blank">Scheithauer and Terno (1993)</a>, <a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell et al. (2001).</a>: El término "Hodografia" ("Hodograph") es a menudo usado para describir NFP, interpretando en un plano gemétrico la descripción de la trayectoria, según el extremo de los vectores.
+	</p>
+	<p>
+		<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006)</a>:
+	</p>
+	<p>
+		<a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>:
+	</p>
+	<p>
+		<a href="../docs/No-fit_polygon/A_comprehensive_and_robust_procedure_for_obtaining_the_nofit_polygon_using_Minkowski_sums.pdf" target="_blank">Bennell & Song(2008)</a>: 
+	</p>
+	<h2>NFP:</h2>
+	<p>
+		Hay que mencionar que NFP es una herramienta y no una solución y es por esto que en diversas literaturas es mencionado su uso de manera abstracta o que aveces ni se menciona. Además, es un método opuesto a las técnicas trigonométricas implementadas en otras literaturas y está restringido solo a problemas en 2D.
+	</p>
+	<p>
+		Consta de 2 piezas, siendo una orbitando alrededor del borde de otra fija tocandola pero sin intersectar y el resultado al trazar la pieza B alrededor de la pieza A, se denota NFPab. Para crear este objeto, se debe elegir puntos de referencias de B que determina la traslación al rededor de A. Este punto, puede ser cualquier punto de B y se moverá alrededor de A. Asi tambíen determina si estos dos polígonos se solapan. Este procedimiento posee solo 3 casos, intersección (solapar), tocar y ninguno de los dos (no intersecta).
+	</p>
+	<p>
+		Puede desarrollarse de dos diferentes procedimiento. El primero, es permitido acordar la descomposición de las piezas en subsecciones logrando un conjunto de subpiezas convexas. Sin embargo trae varios inconvenientes. Primero, implica diseñar una heuristica por la cantidad de veces que debe calcularse todos los subNFP de todas las subpiezas. Segundo, cuando dos subNFP tocan pero no solapan al tocar el borde del NFP final, se debe procurar si es grabado correctamente. A pesar  de todo, la descomposición de las piezas permite reducir los costos de calculo de NFP.
+	</p>
+	<h3>Un nuevo procedimiento que permite implementar NFP [<a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell, Dowsland, Dowsland (2001)</a>].</h3>
+	<p>
+		<i>
+			"The no"t polygon is a powerful and e!ective tool for handling the geometry required for a range of
+			solution approaches to two-dimensional irregular cutting-stock problems. However, unless all the pieces are
+			convex, it is widely perceived as being di$cult to implement, and its use has therefore been somewhat limited.
+			The primary purpose of this paper is to correct this misconception by introducing a new method of
+			calculating the no"t polygon. Although it is based on previous approaches which use the mathematical
+			concept of Minkowski sums, this new method can be stated as a set of simple rules that can be implemented
+			without an indepth understanding of the underlying mathematics. The result is an approach that is both very
+			general and easy to use."
+		</i>
+		<a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell, J. A., Dowsland, K. A., & Dowsland, W. B. (2001). The irregular cutting-stock problem—a new procedure for deriving the no-fit polygon. Computers & Operations Research, 28(3), 271-287.</a>. Resumen Pag. 1
+	</p>
+	<h4>Algoritmos NFP & Miskowskin Pag. 12-13</h4>
+	<p>
+		<a href="../docs/No-fit_polygon/The_irregular_cutting-stock_problem_a_new_procedure_for_deriving_no_fit_polygon.pdf" target="_blank">Bennell, J. A., Dowsland, K. A., & Dowsland, W. B. (2001). The irregular cutting-stock problem—a new procedure for deriving the no-fit polygon. Computers & Operations Research, 28(3), 271-287.</a>.
+	</p>
+	<h3>Generación de un <i>no-fit polygon</i> robusto y completo. [<a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a>].</h3>
+	<p>
+		<i>
+			"The no-fit polygon is a construct that can be used between pairs of shapes for fast and efficient handling of geometry
+			within irregular two-dimensional stock cutting problems. Previously, the no-fit polygon (NFP) has not been widely applied
+			because of the perception that it is difficult to implement and because of the lack of generic approaches that can cope with
+			all problem cases without specific case-by-case handling. This paper introduces a robust orbital method for the creation of
+			no-fit polygons which does not suffer from the typical problem cases found in the other approaches from the literature.
+			Furthermore, the algorithm only involves two simple geometric stages so it is easily understood and implemented."
+		</i>
+		<a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke, E. K., Hellier, R. S., Kendall, G., & Whitwell, G. (2007). Complete and robust no-fit polygon generation for the irregular stock cutting problem. European Journal of Operational Research, 179(1), 27-49.</a> Parte: <i>Abstract</i>, página: 1 (23).
+	</p>
+	<h4>Algoritmo NFP y <i>Next point start</i> en la página 41.</h4>
+	<p>
+		La intención de este <i>paper</i>, es entregar un método de desarrollo NFP más sencillo dado que la percepción que se tiene en literaturas anteriores es alta complejidad y que fue implementado en pocas investigaciones porque no existe una propuesta general que abarque a todos los problemas y deben ser especificado caso por casos para llegar al resultado.
+	</p>
+	<p>
+		Es importante destacar que las rotaciones de figuras es esencial añadirlas gracias a sus propiedades fisicas o lineales que permiten entregar mejores diseños de solución. Sin embargo, dada a su magnitud de posibles rotaciones, el conjunto de rotaciones es limitadas para entregar resultados más rapidos en eficiencia y construcción.
+	</p>
+	<h2>¿Es seguro añadir 2-exchange a la tesis?</h2>
+	<p>
+		Tesis: <a href="../docs/Gomes-&-Oliveira/A_2-exchange_heuristic_for_nesting_problems.pdf" target="_blank">Gomes, A. M., & Oliveira, J. F. (2002). A 2-exchange heuristic for nesting problems. European Journal of Operational Research, 141(2), 359-370.</a>
+	</p>
+	<p>
+		Siendo el caso de que a la fecha, la tesis de <a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006)</a> es la más eficiente. Pero se pretende evaluar si utilizando el NFP de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> y <i>placement heuristic</i> se expresa un avance importante.
+	</p>
+	<h2>Según <i>Benchmark</i> entrgados por las literatura de no-fit polygon robusto y completo (2007) y 2-exchange ¿Se desmuestra un cambio importante en eficiencia?</h2>
+	<h2><i>Paper</i> con mejores resultados hasta el año 2006. ¿Existen mejores hasta hoy?</h2>
+	<p>
+		<i>
+			"In this paper a hybrid algorithm to solve Irregular Strip Packing problems is presented. The metaheuristic simulated
+			annealing is used to guide the search over the solution space while linear programming models are solved to generate
+			neighbourhoods during the search process. These linear programming models, which are used to locally optimise the
+			layouts, derive from the application of compaction and separation algorithms.
+			Computational tests were run using instances that are commonly used as benchmarks in the literature. The best
+			results published so far have been improved by this new hybrid packing algorithm."
+		</i>
+		<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes, A. M., & Oliveira, J. F. (2006). Solving irregular strip packing problems by hybridising simulated annealing and linear programming. European Journal of Operational Research, 171(3), 811-829.</a>. Resumen Pag. 1
+	</p>
+	<h2>¿Por qué <i>compaction & separation (<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006))</a></i> obtiene mejores resultados hasta dicha fecha?</h2>
+	<h2>¿Por qué NFP y no <i>compaction & separation (<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006))</a></i>?</h2>
+	<h2><i>Benchmark</i> donde implementan NFP y <i>bottom left</i>, y comparar resultados con <i>compaction & separation (<a href="../docs/Gomes-&-Oliveira/Solving_irregular_strip_packing_problems_by_hybridising_simulated_annealing_and_linear_programming.pdf" target="_blank">Gomes & Oliveira (2006))</a></i>.</h2>
+	<h2>Literaturas que implementan NFP.</h2>
+	<p>
+		Se reconocen hasta el año 2002. ¿Qué pasa después?
+	</p>
+	<p>
+		<a href="../docs/Papers_que_usan_NFP/A_new_algorithm_for_the_minimal-area_convex_enclosure_problem.pdf" target="_blank">Grinde and Cavalier (1995)</a>:
+	</p>
+	<p>
+		 <a href="../docs/Papers_que_usan_NFP/An_algorithm_to_compute_the_Minkowski_sum_outer-face_of_two_simple_polygons.pdf" target="_blank">Ramkumar (1996)</a>: 
+	</p>
+	<p>
+		<a href="../docs/Papers_que_usan_NFP/Quick_and_precise_clustering_of_arbitrarily_shaped_flat_patterns_based_on_stringy_effect.pdf" target="_blank">Cheng and Rao (1997)</a>: 
+	</p>
+	<p>
+		Dowsland et al. (1998 "Jostling for position Local improvement for irregular cutting patterns", <a href="../docs/Papers_que_usan_NFP/An_algorithm_for_polygon_placement_using_a_bottom-left_strategy.pdf" target="_blank">2002</a>):
+	</p>
+	<p>
+		<a href="../docs/Papers_que_usan_NFP/Rotational_polygon_containment_and_minimum_enclosure_using_only_robust_2D_constructions.pdf" target="_blank">Milenkovic (1999)</a>:
+	</p>
+	<p>
+		<a href="../docs/Papers_que_usan_NFP/A_2-exchange_heuristic_for_nesting_problems.pdf" target="_blank">Gomes and Oliveira (2002)</a>:
+	</p>
+	<h2>¿Existen literaturas heurísticas donde implementan el NFP de <a href="../docs/No-fit_polygon/Complete_and_robust_no-fit_polygon_generation.pdf" target="_blank">Burke et al. (2007)</a> con Bottom-left?</h2>
+</body>
+</html>
